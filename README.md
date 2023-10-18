@@ -21,3 +21,5 @@ To create a PDF, simply open the html file in your browser and print the page.
 ```
 cmd + p
 ```
+
+See example [PDF](https://github.com/dimslaev/md-cv/blob/main/example.pdf).
