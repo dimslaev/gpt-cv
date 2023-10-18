@@ -1,0 +1,15 @@
+{
+  "name": "markdown-cv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dimslaev@gmail.com",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch-path=./markdown --watch-path=./template --watch-path=./index.js index.js",
+    "build": "node index.js"
+  },
+  "dependencies": {
+    "marked": "^9.1.2"
+  }
+}

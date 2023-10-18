@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+a:visited {
+  color: blue;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.content {
+  width: 922px;
+  padding: 2rem;
+  margin: 2rem auto;
+  background-color: white;
+}
+
+@media print {
+  html {
+    font-size: 10pt !important;
+  }
+  .content {
+    width: unset;
+    padding: unset;
+    margin: unset;
+    background-color: unset;
+  }
+}
+
+body {
+  font-family: "Albert Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.025rem;
+}
+h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0.5rem;
+}
+
+section,
+article {
+  margin-bottom: 1rem;
+}
+section:last-child,
+section > *:last-child,
+article > *:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+.header h1 {
+  margin-bottom: 0;
+}
+.header h2 {
+  margin-bottom: 0;
+}
+
+.skills > article {
+  margin-bottom: 0;
+}
+.skills strong {
+  font-weight: 400;
+}
+
+.education > article > h5 {
+  font-weight: normal;
+  font-size: 0.825rem;
+}
+
+section.table table {
+  width: 100%;
+}
+
+section.table table th:first-child,
+section.table table th:last-child {
+  width: 50%;
+}
+section.table table th {
+  font-size: 1.125rem;
+  text-align: left;
+  padding-bottom: 0.25rem;
+}
