@@ -12,9 +12,9 @@ yarn dev
 
 Build html files in `html` folder once.
 
-````
-yarn build```
-````
+```
+yarn build
+```
 
 To create a PDF, simply open the html file in your browser and print the page.
 
