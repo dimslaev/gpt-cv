@@ -1,15 +1,18 @@
 {
   "name": "markdown-cv",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "author": "dimslaev@gmail.com",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "node --watch-path=./markdown --watch-path=./template --watch-path=./index.js index.js",
-    "build": "node index.js"
+    "dev": "node --watch-path=./markdown --watch-path=./template --watch-path=./build.js build.js",
+    "build": "node build.js",
+    "generate-cv": "node generate-cv.js"
   },
   "dependencies": {
-    "marked": "^9.1.2"
+    "dotenv": "^16.4.5",
+    "marked": "^9.1.2",
+    "openai": "^4.68.1"
   }
 }

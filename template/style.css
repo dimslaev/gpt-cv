@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -9,10 +9,11 @@
 a,
 a:visited {
   color: blue;
+  text-decoration: none;
 }
 
 html {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body {
@@ -39,9 +40,9 @@ body {
 }
 
 body {
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 h1 {
   font-size: 1.5rem;
@@ -75,10 +76,14 @@ p {
   margin-bottom: 0.5rem;
 }
 
-section,
-article {
-  margin-bottom: 1rem;
+section {
+  margin-bottom: 1.5rem;
 }
+
+article {
+  margin-bottom: 1.25rem;
+}
+
 section:last-child,
 section > *:last-child,
 article > *:last-child {
@@ -87,6 +92,7 @@ article > *:last-child {
 
 ul {
   padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .header h1 {
@@ -96,28 +102,9 @@ ul {
   margin-bottom: 0;
 }
 
-.skills > article {
+.skills > p {
   margin-bottom: 0;
 }
 .skills strong {
-  font-weight: 400;
-}
-
-.education > article > h5 {
-  font-weight: normal;
-  font-size: 0.825rem;
-}
-
-section.table table {
-  width: 100%;
-}
-
-section.table table th:first-child,
-section.table table th:last-child {
-  width: 50%;
-}
-section.table table th {
-  font-size: 1.125rem;
-  text-align: left;
-  padding-bottom: 0.25rem;
+  font-weight: 500;
 }
