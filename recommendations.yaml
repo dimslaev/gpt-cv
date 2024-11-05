@@ -1,0 +1,148 @@
+summary:
+  content: >
+    Highly skilled and detail-oriented Frontend Engineer with [X years] of experience in developing innovative and
+    efficient user interfaces for web applications. Proficient in HTML, CSS, and JavaScript, with a strong understanding
+    of modern frontend frameworks such as React, Angular, and Vue.js. Proven track record of collaborating with
+    cross-functional teams to design, develop, and implement user-friendly interfaces.
+  recommendations:
+    - recommendation: >-
+        Rephrase the summary to highlight backend development and data management experience, aligning with the job
+        title of Software Engineer.
+      source: >-
+        We are looking for passionate software engineers with expertise in backend, data, infrastructure, mobile, or
+        security.
+      example: >-
+        Highly skilled and detail-oriented Software Engineer with [X years] of experience in backend development and
+        data management, focusing on creating efficient and scalable applications.
+    - recommendation: >-
+        Emphasize collaboration and problem-solving skills in the summary to match the job description's focus on
+        teamwork and technical challenges.
+      source: "Skills: collaboration, problem-solving."
+      example: >-
+        Proven track record of collaborating with cross-functional teams to solve complex problems and deliver
+        high-quality software solutions.
+    - recommendation: >-
+        Add a mention of emerging technologies and security practices to demonstrate adaptability and relevance to the
+        job description.
+      source: "Skills: emerging technologies, security practices."
+      example: >-
+        Passionate about exploring emerging technologies and implementing security best practices to enhance product
+        quality.
+skills:
+  technical:
+    content:
+      - UI/UX Design
+      - Responsive Design
+      - Cross-Platform Compatibility
+      - Performance Optimization
+      - RESTful APIs
+      - Database Management
+      - Testing and Debugging
+      - DevOps Tools
+      - Agile
+      - Git
+      - Jira
+      - CI/CD
+      - Linting
+      - Webpack
+      - Automation Tools
+    recommendations:
+      - recommendation: >-
+          Emphasize 'Backend Development' and 'Data Management' skills by rephrasing existing skills to align with the
+          job description.
+        source: 'Skills: ["backend development", "data management"]'
+        example: Rephrase 'Database Management' to 'Backend Development and Database Management'.
+      - recommendation: >-
+          Add 'Infrastructure Design' and 'Security Practices' as new skills to reflect the job description
+          requirements.
+        source: 'Skills: ["infrastructure design", "security practices"]'
+        example: Add 'Infrastructure Design' and 'Security Practices' to the skills section.
+      - recommendation: >-
+          Reorder the skills to prioritize those that match the job description and ATS keywords, placing 'Backend
+          Development', 'Data Management', and 'Infrastructure Design' at the top.
+        source: 'ATS: ["backend", "data", "infrastructure"]'
+        example: >-
+          Reorder skills to: ["Backend Development", "Data Management", "Infrastructure Design", "Mobile Development",
+          "Security Practices", "UI/UX Design", "Responsive Design", "Cross-Platform Compatibility", "Performance
+          Optimization", "RESTful APIs", "Testing and Debugging", "DevOps Tools", "Agile", "Git", "Jira", "CI/CD",
+          "Linting", "Webpack", "Automation Tools"]
+  nonTechnical:
+    content:
+      - Communication
+      - Problem-Solving
+      - Time Management
+      - Leadership
+    recommendations:
+      - recommendation: Emphasize technical skills relevant to backend development and data management.
+        source: 'Skills: ["backend development","data management"]'
+        example: Add skills such as 'Backend Development' and 'Data Management' to the CV.
+      - recommendation: Add infrastructure design and security practices as key technical skills.
+        source: 'Skills: ["infrastructure design","security practices"]'
+        example: Include 'Infrastructure Design' and 'Security Practices' in the skills section.
+      - recommendation: Reorder the skills to align with the job description and ATS keywords, prioritizing technical skills.
+        source: 'ATS: ["software engineer","backend","data","infrastructure","mobile","security"]'
+        example: >-
+          Reorder skills to: ['Backend Development', 'Data Management', 'Infrastructure Design', 'Security Practices',
+          'Problem-Solving', 'Collaboration'].
+experience:
+  - content:
+      title: Software Engineer
+      company: GlobalTech Solutions
+      location: New York, USA
+      dates: Jan 2022 - current
+      responsibilities:
+        - >-
+          Developed scalable software applications, enhancing system performance and reliability across multiple
+          platforms.
+        - Collaborated with designers and backend teams to deliver seamless and user-friendly digital solutions.
+        - Led technical initiatives to improve product performance, resulting in measurable efficiency gains.
+        - >-
+          Participated in cross-functional projects aimed at improving software delivery pipelines and reducing
+          deployment times.
+    recommendations:
+      - recommendation: Emphasize collaboration with team members and enhancing libraries.
+        source: Collaborate with team members to enhance libraries and streamline processes.
+        example: >-
+          Collaborated with team members to enhance libraries and streamline processes, improving overall software
+          efficiency.
+      - recommendation: Highlight staying updated on emerging technologies and evaluating their impact.
+        source: Stay updated on emerging technologies, evaluating those that can boost productivity.
+        example: >-
+          Regularly evaluated and integrated emerging technologies to boost productivity and enhance software
+          performance.
+      - recommendation: Focus on improving product quality by addressing bugs and refactoring code.
+        source: Improve product quality by addressing bugs and refactoring code as needed.
+        example: >-
+          Led initiatives to improve product quality by addressing bugs and refactoring code, resulting in a 20%
+          reduction in reported issues.
+  - content:
+      title: Software Engineer
+      company: Tech Innovators Co.
+      location: Remote
+      dates: Jan 2020 - Jan 2022
+      responsibilities:
+        - Designed and implemented responsive and dynamic applications, resulting in enhanced customer satisfaction.
+        - Optimized code performance and implemented new technologies to reduce system bottlenecks.
+        - Worked closely with stakeholders to deliver solutions that aligned with business goals.
+        - Led the migration of legacy systems to modern architectures, improving maintainability and scalability.
+    recommendations:
+      - recommendation: Emphasize collaboration with team members in the design and implementation process.
+        source: Collaborate with team members to enhance libraries and streamline processes.
+        example: >-
+          Collaborated with team members to design and implement responsive and dynamic applications, resulting in
+          enhanced customer satisfaction.
+      - recommendation: Highlight the use of emerging technologies to improve product quality and performance.
+        source: Stay updated on emerging technologies, evaluating those that can boost productivity.
+        example: >-
+          Optimized code performance and implemented emerging technologies to reduce system bottlenecks and improve
+          product quality.
+      - recommendation: Rephrase to reflect a strong problem-solving approach and detail-oriented mindset in delivering solutions.
+        source: Strong problem-solving skills with a detail-oriented mindset.
+        example: >-
+          Utilized strong problem-solving skills to work closely with stakeholders, delivering solutions that aligned
+          with business goals.
+      - recommendation: Add a focus on the migration process as a collaborative effort to improve maintainability and scalability.
+        source: Team-oriented with a collaborative spirit, supporting the best ideas.
+        example: >-
+          Led a collaborative effort in the migration of legacy systems to modern architectures, significantly improving
+          maintainability and scalability.

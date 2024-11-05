@@ -1,18 +1,23 @@
 {
-  "name": "markdown-cv",
-  "version": "2.0.0",
+  "name": "yaml-cv",
+  "version": "0.1.0",
   "main": "index.js",
   "author": "dimslaev@gmail.com",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "node --watch-path=./markdown --watch-path=./template --watch-path=./build.js build.js",
-    "build": "node build.js",
-    "generate-cv": "node generate-cv.js"
+    "build": "tsx build.ts",
+    "tailor": "tsx tailor.ts"
   },
   "dependencies": {
+    "@langchain/core": "^0.3.17",
+    "@langchain/openai": "^0.3.11",
+    "@types/js-yaml": "^4.0.9",
     "dotenv": "^16.4.5",
-    "marked": "^9.1.2",
-    "openai": "^4.68.1"
+    "js-yaml": "^4.1.0",
+    "langchain": "^0.3.5",
+    "openai": "^4.68.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
   }
 }

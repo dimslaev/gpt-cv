@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Target modern JavaScript for better performance
+    "module": "CommonJS", // Use CommonJS for compatibility with Node.js
+    "moduleResolution": "node", // Use Node module resolution strategy
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Enable interoperability between CommonJS and ES modules
+    "skipLibCheck": true, // Skip type checking for libraries for faster startup
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file naming conventions
+    "noEmit": true, // Do not emit output files (only use with ts-node)
+    "resolveJsonModule": true, // Allow importing JSON files as modules
+    "isolatedModules": true, // Enable isolated modules for compatibility with ts-node
+    "strictPropertyInitialization": false // Disable property has no initializer warning
+  },
+  "ts-node": {
+    "transpileOnly": true, // Enable faster compilation by skipping type-checking
+    "files": true // Include all files specified in the TypeScript project
+  },
+  "include": [
+    "*.ts",
+    "lib/config.ts",
+    "lib/utils.ts",
+    "lib/wrappers.ts",
+    "lib/schemas.ts",
+    "lib/interfaces.ts",
+    "lib/prompts.ts"
+  ], // Only include TypeScript files from the src directory
+  "exclude": ["node_modules"] // Exclude node_modules to avoid unnecessary checks
+}
