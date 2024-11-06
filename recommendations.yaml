@@ -1,0 +1,137 @@
+summary:
+  content: >
+    Highly skilled and detail-oriented Frontend Engineer with [X years] of experience in developing innovative and
+    efficient user interfaces for web applications. Proficient in HTML, CSS, and JavaScript, with a strong understanding
+    of modern frontend frameworks such as React, Angular, and Vue.js. Proven track record of collaborating with
+    cross-functional teams to design, develop, and implement user-friendly interfaces.
+  recommendations:
+    - recommendation: >-
+        Emphasize backend development experience and skills, as the job focuses on software engineering with backend
+        expertise.
+      source: expertise in backend, data, infrastructure, mobile, or security
+      example: >-
+        Highly skilled and detail-oriented Software Engineer with [X years] of experience in backend development and
+        data management.
+    - recommendation: >-
+        Incorporate keywords from the job description to align with ATS, such as 'collaboration', 'problem-solving', and
+        'emerging technologies'.
+      source: collaboration, problem-solving, emerging technologies
+      example: >-
+        Proven track record of collaboration and problem-solving in cross-functional teams, leveraging emerging
+        technologies to enhance product quality.
+    - recommendation: Remove frontend-specific terminology and focus on software engineering skills relevant to the job description.
+      source: software engineers are encouraged to explore different areas
+      example: >-
+        Passionate about exploring various areas within software engineering, including backend, data, and
+        infrastructure design.
+skills:
+  technical:
+    content:
+      - UI/UX Design
+      - Responsive Design
+      - Cross-Platform Compatibility
+      - Performance Optimization
+      - RESTful APIs
+      - Database Management
+      - Testing and Debugging
+      - DevOps Tools
+      - Agile
+      - Git
+      - Jira
+      - CI/CD
+      - Linting
+      - Webpack
+      - Automation Tools
+    recommendations:
+      - recommendation: Emphasize backend development and data management skills, as they are crucial for the role.
+        source: 'Skills: ["backend development","data management"]'
+        example: Backend Development, Data Management, RESTful APIs, Database Management, DevOps Tools
+      - recommendation: >-
+          Add infrastructure design and security best practices to highlight relevant experience and align with job
+          requirements.
+        source: 'Skills: ["infrastructure design","security best practices"]'
+        example: Infrastructure Design, Security Best Practices, Agile, Git, CI/CD
+      - recommendation: >-
+          Reorder skills to prioritize those that match the job description and ATS keywords, focusing on backend, data,
+          and security.
+        source: 'ATS: ["software engineer","backend","data","infrastructure","security"]'
+        example: >-
+          Backend Development, Data Management, Infrastructure Design, Security Best Practices, Problem-Solving,
+          Collaboration, Agile, Git, CI/CD
+  nonTechnical:
+    content:
+      - Communication
+      - Problem-Solving
+      - Time Management
+      - Leadership
+    recommendations:
+      - recommendation: >-
+          Emphasize collaboration and problem-solving skills, as they are directly mentioned in the job description and
+          are critical for a software engineer role.
+        source: 'Skills: ["collaboration","problem-solving"]'
+        example: Collaboration, Problem-Solving, Communication, Leadership, Time Management
+      - recommendation: >-
+          Add 'team-oriented' to highlight the ability to work effectively within a team, which aligns with the job
+          description's emphasis on collaboration.
+        source: 'ATS: ["team-oriented"]'
+        example: Collaboration, Problem-Solving, Communication, Leadership, Time Management, Team-Oriented
+      - recommendation: >-
+          Reorder skills to prioritize those that align with the job description and ATS keywords, placing
+          'Problem-Solving' and 'Collaboration' at the top.
+        source: 'ATS: ["problem-solving","collaboration"]'
+        example: Problem-Solving, Collaboration, Communication, Leadership, Time Management, Team-Oriented
+experience:
+  - content:
+      title: Software Engineer
+      company: GlobalTech Solutions
+      location: New York, USA
+      dates: Jan 2022 - current
+      responsibilities:
+        - >-
+          Developed scalable software applications, enhancing system performance and reliability across multiple
+          platforms.
+        - Collaborated with designers and backend teams to deliver seamless and user-friendly digital solutions.
+        - Led technical initiatives to improve product performance, resulting in measurable efficiency gains.
+        - >-
+          Participated in cross-functional projects aimed at improving software delivery pipelines and reducing
+          deployment times.
+    recommendations:
+      - recommendation: Emphasize collaboration with team members to align with the job's focus on teamwork and enhancing libraries.
+        source: Collaborate with team members to enhance libraries and streamline processes.
+        example: >-
+          Collaborated with cross-functional teams to enhance libraries and streamline processes, improving overall
+          software delivery.
+      - recommendation: Highlight the evaluation of emerging technologies to demonstrate a proactive approach to productivity.
+        source: Stay updated on emerging technologies, evaluating those that can boost productivity.
+        example: Evaluated and integrated emerging technologies to boost productivity and enhance system performance.
+      - recommendation: >-
+          Rephrase to include a focus on product quality and problem-solving skills, which are key qualifications in the
+          job description.
+        source: Improve product quality by addressing bugs and refactoring code as needed.
+        example: >-
+          Improved product quality by proactively addressing bugs and refactoring code, showcasing strong
+          problem-solving skills.
+  - content:
+      title: Software Engineer
+      company: Tech Innovators Co.
+      location: Remote
+      dates: Jan 2020 - Jan 2022
+      responsibilities:
+        - Designed and implemented responsive and dynamic applications, resulting in enhanced customer satisfaction.
+        - Optimized code performance and implemented new technologies to reduce system bottlenecks.
+        - Worked closely with stakeholders to deliver solutions that aligned with business goals.
+        - Led the migration of legacy systems to modern architectures, improving maintainability and scalability.
+    recommendations:
+      - recommendation: Emphasize collaboration by highlighting teamwork and communication with stakeholders.
+        source: Collaborate with team members to enhance libraries and streamline processes.
+        example: >-
+          Collaborated with cross-functional teams to enhance libraries and streamline processes, ensuring alignment
+          with business goals.
+      - recommendation: Rephrase to include a focus on emerging technologies and their impact on productivity.
+        source: Stay updated on emerging technologies, evaluating those that can boost productivity.
+        example: Evaluated and integrated emerging technologies to optimize code performance and boost overall productivity.
+      - recommendation: Add a focus on product quality and problem-solving skills, specifically addressing bugs and refactoring.
+        source: Improve product quality by addressing bugs and refactoring code as needed.
+        example: >-
+          Improved product quality by proactively addressing bugs and refactoring code, demonstrating strong
+          problem-solving skills.
