@@ -72,21 +72,15 @@ export const OptionalCVSchema = z.object({
 });
 
 export const JobDescriptionSchema = z.object({
-  jobCompany: z.string().optional(),
   jobTitle: z.string().optional(),
   jobSummary: z.string().optional(),
   jobDuties: z.array(z.string()).optional(),
-  jobQualifications: z.array(z.string()).optional(),
-  jobAtsKeywords: z.array(z.string()).optional(),
   jobSkills: z.array(z.string()).optional(),
+  jobAtsKeywords: z.array(z.string()).optional(),
 });
 
-export const RecommendationSchema = z.object({
-  recommendation: z.string(),
-  source: z.string(),
-  example: z.string(),
-});
-
-export const RecommendationListSchema = z.object({
-  list: z.array(RecommendationSchema),
+export const RevisionSchema = z.object({
+  result: z.array(z.string()),
+  changes: z.array(z.string()),
+  recommendations: z.array(z.string()),
 });

@@ -1,6 +1,8 @@
 import fs from "fs/promises";
 import { load as loadYaml, dump as dumpYaml } from "js-yaml";
 import { z } from "zod";
+import { GeneratorLog, GeneratorLogs, ResponseMeta } from "./interfaces";
+import { BaseMessage } from "@langchain/core/messages";
 
 export async function parseFile<T = unknown>(
   filePath: string,
@@ -20,4 +22,26 @@ export async function writeYaml(filePath: string, yamlContent: any) {
   } catch (error) {
     console.error(`Error writing to YAML file: ${error}`);
   }
+}
+
+export function getDefaultLogs(defaultLog: GeneratorLog): GeneratorLogs {
+  return {
+    summary: { ...defaultLog },
+    skills: {
+      technical: { ...defaultLog },
+      nonTechnical: { ...defaultLog },
+    },
+    experience: [],
+  };
+}
+
+export function getResponseMeta(
+  metadata: BaseMessage["response_metadata"]
+): ResponseMeta {
+  return {
+    promptTokens: metadata?.tokenUsage?.promptTokens || 0,
+    completionTokens: metadata?.tokenUsage?.completionTokens || 0,
+    totalTokens: metadata?.tokenUsage?.totalTokens || 0,
+    cachedTokens: metadata?.usage?.prompt_tokens_details?.cached_tokens || 0,
+  };
 }

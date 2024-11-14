@@ -1,6 +1,6 @@
 import path from "path";
 import dotenv from "dotenv";
-import { CV } from "./interfaces";
+import { CV, GeneratorLog } from "./interfaces";
 
 dotenv.config();
 
@@ -12,8 +12,14 @@ export const paths = {
   html: path.join(basePath, "html"),
   template: path.join(basePath, "template"),
   baseFile: path.join(basePath, "yaml", "_base.yaml"),
+  generatedFile: path.join(basePath, "yaml", "_generated.yaml"),
   jobDescription: path.join(basePath, "job-description.txt"),
-  recommendations: path.join(basePath, "recommendations.yaml"),
+};
+
+export const MODEL_CONFIG = {
+  MODEL: "gpt-4o-mini",
+  MAX_TOKENS: 3000,
+  TEMPERATURE: 0,
 };
 
 export const SECTION_ORDER: Array<keyof CV> = [
@@ -25,3 +31,14 @@ export const SECTION_ORDER: Array<keyof CV> = [
   "certificates",
   "languages",
 ];
+
+export const DEFAULT_LOG: GeneratorLog = {
+  changes: [],
+  recommendations: [],
+  meta: {
+    promptTokens: 0,
+    completionTokens: 0,
+    totalTokens: 0,
+    cachedTokens: 0,
+  },
+};

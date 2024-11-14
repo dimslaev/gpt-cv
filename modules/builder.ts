@@ -1,12 +1,12 @@
 import path from "path";
 import fs from "fs/promises";
-import { paths, SECTION_ORDER } from "./lib/config";
-import * as wrappers from "./lib/wrappers";
-import { CV } from "./lib/interfaces";
-import { parseFile } from "./lib/utils";
-import { CVSchema, OptionalCVSchema } from "./lib/schemas";
+import { paths, SECTION_ORDER } from "../lib/config";
+import * as wrappers from "../lib/wrappers";
+import { CV } from "../lib/interfaces";
+import { parseFile } from "../lib/utils";
+import { CVSchema, OptionalCVSchema } from "../lib/schemas";
 
-class CVBuilder {
+export class Builder {
   getInnerHtml(sections: CV): string {
     return SECTION_ORDER.map((section) => {
       switch (section) {
@@ -62,5 +62,3 @@ class CVBuilder {
     );
   }
 }
-
-new CVBuilder().build().catch(console.error);

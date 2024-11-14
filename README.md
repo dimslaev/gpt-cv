@@ -1,4 +1,4 @@
-# YAML CV
+# GPT CV
 
 Manage multiple versions of your CV and tailor them for specific job descriptions using ChatGPT (requires an OpenAI API key in .env).
 
@@ -26,8 +26,8 @@ yarn build
 
 #### Generate tailored recommendations
 
-Based on a specific job description file (`job-description.yaml`), this script generates a list of recommendations for tailoring the CV, saved in a new YAML file. The recommendations specify updates for each CV section, helping you adjust content effectively.
+Based on a specific job description file (`job-description.yaml`), this script generates a new tailored version of your CV, saved as `/yaml/_generated.yaml`.
 
 ```
-yarn tailor
+yarn generate
 ```

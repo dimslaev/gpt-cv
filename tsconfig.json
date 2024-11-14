@@ -23,7 +23,9 @@
     "lib/wrappers.ts",
     "lib/schemas.ts",
     "lib/interfaces.ts",
-    "lib/prompts.ts"
+    "lib/prompts.ts",
+    "modules/generator.ts",
+    "modules/builder.ts"
   ], // Only include TypeScript files from the src directory
   "exclude": ["node_modules"] // Exclude node_modules to avoid unnecessary checks
 }

@@ -1,13 +1,13 @@
 {
-  "name": "yaml-cv",
-  "version": "0.1.0",
-  "main": "index.js",
+  "name": "gpt-cv",
+  "version": "0.2.0",
+  "main": "index.ts",
   "author": "dimslaev@gmail.com",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "tsx build.ts",
-    "tailor": "tsx tailor.ts"
+    "build": "tsx index.ts -- --m=builder",
+    "generate": "tsx index.ts -- --m=generator"
   },
   "dependencies": {
     "@langchain/core": "^0.3.17",
