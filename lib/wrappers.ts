@@ -1,26 +1,34 @@
 import { CV } from "./interfaces";
+import { stripHttp } from "./utils";
 
 export function wrapHeader(header: CV["header"]): string {
   return `
       <section class="header">
         <h1>${header.name}</h1>
         <h2>${header.title}</h2>
-        <p>Email: <a href="mailto:${header.contact.email}">${
+        <ul>
+        <li><a href="mailto:${header.contact.email}">${
     header.contact.email
-  }</a></p>
+  }</a></li>
         ${
           header.contact.website
-            ? `<p>Website: <a href="${header.contact.website}">${header.contact.website}</a></p>`
+            ? `<li><a href="${header.contact.website}">${stripHttp(
+                header.contact.website
+              )}</a></li>`
             : ""
         }
         ${
           header.contact.linkedin
-            ? `<p>LinkedIn: <a href="${header.contact.linkedin}">${header.contact.linkedin}</a></p>`
+            ? `<li><a href="${header.contact.linkedin}">${stripHttp(
+                header.contact.linkedin
+              )}</a></li>`
             : ""
         }
         ${
           header.contact.phone
-            ? `<p>Phone: <a href="tel:${header.contact.phone}">${header.contact.phone}</a></p>`
+            ? `<li><a href="tel:${header.contact.phone}">${stripHttp(
+                header.contact.phone
+              )}</a></li>`
             : ""
         }
       </section>`;
@@ -42,10 +50,15 @@ export function wrapSkills(skillCategory: CV["skills"]): string {
           .map((key) => {
             const skills = skillCategory[key as keyof CV["skills"]]!;
             return `
-              <h4>${key === "technical" ? "Technical" : "Soft skills"}</h4>
-              <ul>
-                ${skills.map((skill) => `<li>${skill}</li>`).join("\n") ?? ""}
-              </ul>`;
+              <article>
+                <strong>${
+                  key === "technical" ? "Technical" : "Soft skills"
+                }:</strong>
+                  ${
+                    skills.map((skill) => `<span>${skill}</span>`).join(", ") ??
+                    ""
+                  }
+              </article>`;
           })
           .join("\n")}
       </section>`;

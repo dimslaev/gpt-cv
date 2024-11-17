@@ -28,9 +28,6 @@ body {
 }
 
 @media print {
-  html {
-    font-size: 10pt !important;
-  }
   .content {
     width: unset;
     padding: unset;
@@ -99,12 +96,21 @@ ul {
   margin-bottom: 0;
 }
 .header h2 {
-  margin-bottom: 0;
+  margin-bottom: 0.125rem;
+}
+.header ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0;
 }
 
-.skills > p {
-  margin-bottom: 0;
+.header ul li + li::before {
+  content: "|";
+  margin-right: 0.25rem;
 }
-.skills strong {
-  font-weight: 500;
+
+.skills article:not(:last-of-type) {
+  margin-bottom: 0.25rem;
 }

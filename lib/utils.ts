@@ -45,3 +45,7 @@ export function getResponseMeta(
     cachedTokens: metadata?.usage?.prompt_tokens_details?.cached_tokens || 0,
   };
 }
+
+export function stripHttp(link: string) {
+  return link.replace(/http(s?):\/\//, "");
+}

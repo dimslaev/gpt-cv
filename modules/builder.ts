@@ -57,6 +57,11 @@ export class Builder {
         const outerHtml = this.getOuterHtml(template, innerHtml);
 
         const outputFileName = versionFile.replace(".yaml", ".html");
+        try {
+          await fs.access(paths.html);
+        } catch {
+          await fs.mkdir(paths.html, { recursive: true });
+        }
         await fs.writeFile(path.join(paths.html, outputFileName), outerHtml);
       })
     );
