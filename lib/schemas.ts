@@ -79,8 +79,14 @@ export const JobDescriptionSchema = z.object({
   jobAtsKeywords: z.array(z.string()).optional(),
 });
 
-export const RevisionSchema = z.object({
+export const RevisionArraySchema = z.object({
   result: z.array(z.string()),
+  changes: z.array(z.string()),
+  recommendations: z.array(z.string()),
+});
+
+export const RevisionStringSchema = z.object({
+  result: z.string(),
   changes: z.array(z.string()),
   recommendations: z.array(z.string()),
 });

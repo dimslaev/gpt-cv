@@ -35,10 +35,10 @@ export const SECTION_ORDER: Array<keyof CV> = [
 export const DEFAULT_LOG: GeneratorLog = {
   changes: [],
   recommendations: [],
-  meta: {
+  usage: {
     promptTokens: 0,
+    cachedPromptTokens: 0,
     completionTokens: 0,
     totalTokens: 0,
-    cachedTokens: 0,
   },
 };

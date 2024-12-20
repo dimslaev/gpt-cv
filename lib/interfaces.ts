@@ -1,21 +1,27 @@
 import { z } from "zod";
-import { CVSchema, JobDescriptionSchema, RevisionSchema } from "./schemas";
+import {
+  CVSchema,
+  JobDescriptionSchema,
+  RevisionArraySchema,
+  RevisionStringSchema,
+} from "./schemas";
 
 export type CV = z.infer<typeof CVSchema>;
 export type JobDescription = z.infer<typeof JobDescriptionSchema>;
-export type Revision = z.infer<typeof RevisionSchema>;
+export type RevisionArray = z.infer<typeof RevisionArraySchema>;
+export type RevisionString = z.infer<typeof RevisionStringSchema>;
 
-export type ResponseMeta = {
+export type Usage = {
   promptTokens: number;
   completionTokens: number;
   totalTokens: number;
-  cachedTokens: number;
+  cachedPromptTokens: number;
 };
 
 export type GeneratorLog = {
   changes: string[];
   recommendations: string[];
-  meta: ResponseMeta;
+  usage: Usage;
 };
 
 export type GeneratorLogs = {
@@ -26,3 +32,7 @@ export type GeneratorLogs = {
   };
   experience: GeneratorLog[];
 };
+
+export type ParsedTemplateNode =
+  | { type: "literal"; text: string }
+  | { type: "variable"; name: string };

@@ -7,10 +7,11 @@ header:
     linkedin: https://linkedin.com/in/yourprofile
     phone: +XX XXX XXX XXXX
 summary: >-
-  Detail-oriented Software Engineer with expertise in backend and data solutions, possessing [X years] of experience in
-  developing scalable applications and enhancing system performance. Proficient in collaborating with cross-functional
-  teams to streamline processes and improve product quality. Strong problem-solving skills and a commitment to
-  continuous improvement, staying updated on emerging technologies to drive productivity.
+  Detail-oriented Software Engineer with [X years] of experience in backend and frontend development, specializing in
+  creating scalable applications and enhancing system performance. Proficient in modern technologies including RESTful
+  APIs and database management, with a strong focus on collaboration and continuous improvement. Proven ability to work
+  with cross-functional teams to streamline processes, address bugs, and refactor code, ensuring high product quality.
+  Committed to staying updated on emerging technologies to boost productivity and drive excellence in software delivery.
 skills:
   technical:
     - Backend Development
@@ -39,29 +40,27 @@ experience:
     responsibilities:
       - >-
         Developed scalable software applications, enhancing system performance and reliability across multiple
-        platforms.
-      - Collaborated with designers and backend teams to deliver seamless and user-friendly digital solutions.
-      - Led technical initiatives to improve product performance, resulting in measurable efficiency gains.
+        platforms, improving product quality.
       - >-
-        Participated in cross-functional projects aimed at improving software delivery pipelines and reducing deployment
-        times.
+        Collaborated with cross-functional teams to enhance libraries and streamline processes, fostering a
+        team-oriented environment.
+      - >-
+        Led technical initiatives to address bugs and refactor code, resulting in measurable efficiency gains and
+        improved product quality.
+      - >-
+        Participated in projects evaluating emerging technologies to boost productivity and improve software delivery
+        pipelines.
   - title: Software Engineer
     company: Tech Innovators Co.
     location: Remote
     dates: Jan 2020 - Jan 2022
     responsibilities:
+      - Designed and implemented responsive applications, enhancing product quality and customer satisfaction.
+      - Optimized backend code performance, reducing system bottlenecks and improving efficiency.
+      - Collaborated with team members and stakeholders to deliver solutions aligned with business goals.
       - >-
-        Designed and implemented responsive and dynamic applications, enhancing customer satisfaction through improved
-        user experience and functionality.
-      - >-
-        Optimized code performance and integrated emerging technologies, significantly reducing system bottlenecks and
-        increasing productivity.
-      - >-
-        Collaborated with stakeholders to deliver solutions that aligned with business goals, fostering a team-oriented
-        environment and supporting innovative ideas.
-      - >-
-        Led the migration of legacy systems to modern architectures, enhancing maintainability and scalability while
-        improving product quality.
+        Led migration of legacy systems to modern architectures, enhancing infrastructure maintainability and
+        scalability.
 education:
   - degree: Master Degree
     institution: University of Technology

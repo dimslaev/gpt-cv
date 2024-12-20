@@ -1,38 +1,36 @@
 import fs from "fs/promises";
-import { ChatOpenAI } from "@langchain/openai";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { paths, MODEL_CONFIG, DEFAULT_LOG } from "../lib/config";
+import { Chat } from "./chat";
+import { paths, DEFAULT_LOG } from "../lib/config";
 import {
   getDefaultLogs,
-  getResponseMeta,
   parseFile,
   writeYaml,
+  interpolate,
 } from "../lib/utils";
-import { JobDescriptionSchema, RevisionSchema, CVSchema } from "../lib/schemas";
+import {
+  JobDescriptionSchema,
+  RevisionArraySchema,
+  RevisionStringSchema,
+  CVSchema,
+} from "../lib/schemas";
 import {
   type CV,
   type JobDescription,
-  type Revision,
+  type RevisionArray,
+  type RevisionString,
   type GeneratorLogs,
-  ResponseMeta,
 } from "../lib/interfaces";
 import { PROMPTS } from "../lib/prompts";
-import { ZodObjectAny } from "@langchain/core/dist/types/zod";
 
 export class Generator {
   baseCV: CV;
   customCV: CV;
   jobDescription: JobDescription;
   logs: GeneratorLogs = getDefaultLogs(DEFAULT_LOG);
-  model: ChatOpenAI;
+  chat: Chat;
 
   async init() {
-    this.model = new ChatOpenAI({
-      openAIApiKey: process.env.OPEN_API_KEY,
-      modelName: MODEL_CONFIG.MODEL,
-      temperature: MODEL_CONFIG.TEMPERATURE,
-      maxTokens: MODEL_CONFIG.MAX_TOKENS,
-    });
+    this.chat = new Chat();
     this.baseCV = await parseFile<CV>(paths.baseFile, CVSchema);
     this.customCV = { ...this.baseCV };
     this.jobDescription = await this.parseJobDescription();
@@ -40,56 +38,59 @@ export class Generator {
 
   async parseJobDescription(): Promise<JobDescription> {
     const fileContent = await fs.readFile(paths.jobDescription, "utf-8");
-    const structuredLlm = this.model.withStructuredOutput(JobDescriptionSchema);
-    const result = await structuredLlm.invoke(
-      `Parse job description in the required format: ${fileContent}`
-    );
-    return result;
-  }
-
-  async getStructuredOutput<T>({
-    user,
-    schema = RevisionSchema,
-    variables,
-  }: {
-    user: string;
-    schema?: ZodObjectAny;
-    variables: any;
-  }): Promise<T & { meta: ResponseMeta }> {
-    const template = ChatPromptTemplate.fromMessages([
-      ["system", PROMPTS.SYSTEM(this.jobDescription)],
-      ["user", user],
-    ]);
-    const llm = this.model.withStructuredOutput(schema, {
-      includeRaw: true,
+    const completion = await this.chat.completeParsed<JobDescription>({
+      system: `Parse job description in the required format`,
+      user: fileContent,
+      schema: JobDescriptionSchema,
+      schemaName: "job-description",
     });
-    const chain = template.pipe(llm);
-    const { raw, parsed } = await chain.invoke(variables);
-    return { ...parsed, meta: getResponseMeta(raw.response_metadata) };
+    const parsed = this.chat.getParsedContent<JobDescription>(completion);
+    if (!parsed) {
+      throw new Error("Error parsing job description");
+    }
+    return parsed;
   }
 
   async generateSummary() {
-    const { result, ...logs } = await this.getStructuredOutput<Revision>({
-      user: PROMPTS.SUMMARY,
-      variables: this.baseCV,
+    const completion = await this.chat.completeParsed<RevisionString>({
+      system: interpolate(PROMPTS.SYSTEM, this.jobDescription),
+      user: interpolate(PROMPTS.SUMMARY, this.baseCV),
+      schema: RevisionStringSchema,
+      schemaName: "summary",
     });
-    this.customCV.summary = result[0];
-    this.logs.summary = logs;
+    const parsed = this.chat.getParsedContent<RevisionString>(completion);
+    const usage = this.chat.getUsage(completion);
+
+    this.customCV.summary = parsed.result;
+    this.logs.summary = {
+      changes: parsed.changes,
+      recommendations: parsed.recommendations,
+      usage,
+    };
   }
 
   async generateSkills(skillType: "technical" | "nonTechnical") {
     if (!this.baseCV.skills[skillType]?.length) return;
 
-    const { result, ...logs } = await this.getStructuredOutput<Revision>({
-      user: PROMPTS.SKILLS,
-      variables: {
+    const completion = await this.chat.completeParsed<RevisionArray>({
+      system: interpolate(PROMPTS.SYSTEM, this.jobDescription),
+      user: interpolate(PROMPTS.SKILLS, {
         ...this.baseCV,
         skills: this.baseCV.skills[skillType],
         skillType,
-      },
+      }),
+      schema: RevisionArraySchema,
+      schemaName: skillType,
     });
-    this.customCV.skills[skillType] = result;
-    this.logs.skills[skillType] = logs;
+    const parsed = this.chat.getParsedContent<RevisionArray>(completion);
+    const usage = this.chat.getUsage(completion);
+
+    this.customCV.skills[skillType] = parsed.result;
+    this.logs.skills[skillType] = {
+      changes: parsed.changes,
+      recommendations: parsed.recommendations,
+      usage,
+    };
   }
 
   async generateTechnicalSkills() {
@@ -101,14 +102,23 @@ export class Generator {
   }
 
   async generateExperienceItem(item: CV["experience"][number]) {
-    return await this.getStructuredOutput<Revision>({
-      user: PROMPTS.EXPERIENCE,
-      schema: RevisionSchema,
-      variables: {
+    const completion = await this.chat.completeParsed<RevisionArray>({
+      system: interpolate(PROMPTS.SYSTEM, this.jobDescription),
+      user: interpolate(PROMPTS.EXPERIENCE, {
         ...this.baseCV,
         experience: item.responsibilities.join("\n"),
-      },
+      }),
+      schema: RevisionArraySchema,
+      schemaName: "experience",
     });
+    const parsed = this.chat.getParsedContent<RevisionArray>(completion);
+    const usage = this.chat.getUsage(completion);
+    return {
+      result: parsed.result,
+      changes: parsed.changes,
+      recommendations: parsed.recommendations,
+      usage,
+    };
   }
 
   async generateExperience() {
